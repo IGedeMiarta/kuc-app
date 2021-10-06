@@ -10,7 +10,8 @@
          </div>
          <div>
              <a href="/">
-                 <h4 class="logo-text">KUC</h4>
+                 {{-- <h4 class="logo-text" face="verdana">KUC</h4> --}}
+                 <font size="4" face="sans-serif" class="logo-text strong"><b>KUC-APP</b></font>
              </a>
          </div>
          <a href="javascript:;" class="toggle-btn ml-auto"> <i class="bx bx-menu"></i>

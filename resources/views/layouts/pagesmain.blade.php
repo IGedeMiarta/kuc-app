@@ -1,35 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Dashboard - KUC-APP</title>
-    <!--favicon-->
-    <link rel="icon" href="/images/favicon-32x32.png" type="image/png" />
-    <!-- Vector CSS -->
-    <link href="/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
-    <!--plugins-->
-    <link href="/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-    <link href="/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
-    <link href="/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
-    <!-- loader-->
-    <link href="/css/pace.min.css" rel="stylesheet" />
-    <script src="/js/pace.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <!-- Icons CSS -->
-    <link rel="stylesheet" href="/css/icons.css" />
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/css/app.css" />
-    <link rel="stylesheet" href="/css/dark-sidebar.css" />
-    <link rel="stylesheet" href="/css/dark-theme.css" />
-</head>
+@include('layouts.pages.headerpages')
 
 <body>
-    @include('layouts.sidebar')
-    @include('layouts.topbar')
+    @include('layouts.partials.sidebar')
+    @include('layouts.partials.topbar')
     <!--page-wrapper-->
     <div class="page-wrapper">
         <!--page-content-wrapper-->
@@ -86,25 +59,8 @@
     </div> --}}
     <!--end switcher-->
     <!-- JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <!--plugins-->
-    <script src="/plugins/simplebar/js/simplebar.min.js"></script>
-    <script src="/plugins/metismenu/js/metisMenu.min.js"></script>
-    <script src="/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-    <!-- Vector map JavaScript -->
-    <script src="/plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
-    <script src="/plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="/plugins/vectormap/jquery-jvectormap-in-mill.js"></script>
-    <script src="/plugins/vectormap/jquery-jvectormap-us-aea-en.js"></script>
-    <script src="/plugins/vectormap/jquery-jvectormap-uk-mill-en.js"></script>
-    <script src="/plugins/vectormap/jquery-jvectormap-au-mill.js"></script>
-    <script src="/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
-    <script src="/js/index2.js"></script>
-    <!-- App JS -->
-    <script src="/js/app.js"></script>
+
+    @include('layouts.pages.footerpages')
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Searchbar;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/searchbar', [Searchbar::class,'loadData']);
+
 Route::get('/', function () {
-    return view('pages.dashboard');
+    return view('layouts.dashboard');
 });
 
 Route::get('/blank', function () {

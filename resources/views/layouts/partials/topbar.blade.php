@@ -6,20 +6,19 @@
              </a>
          </div>
          {{-- searchbar --}}
-         <div class="flex-grow-1 search-bar">
+         <div class=" flex-grow-1 search-bar">
              <div class="input-group">
                  <div class="input-group-prepend search-arrow-back">
                      <button class="btn btn-search-back" type="button"><i class="bx bx-arrow-back"></i>
                      </button>
                  </div>
-                 <input type="text" class="form-control" placeholder="search" />
+                 <input type="text" class="form-control" placeholder="search" id="inp-search" />
                  <div class="input-group-append">
-                     <button class="btn btn-search" type="button"><i class="lni lni-search-alt"></i>
+                     <button class="btn btn-search" type="button" id="btn-search"><i class="lni lni-search-alt"></i>
                      </button>
                  </div>
              </div>
          </div>
-
          <div class="right-topbar ml-auto">
              <ul class="navbar-nav">
                  {{-- phone search --}}
