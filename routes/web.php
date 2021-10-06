@@ -12,11 +12,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.dashboard');
 });
 
-Route::get('/admin', function () {
-    return view('layouts.index');
+Route::get('/blank', function () {
+    return view('pages.blank');
+});
+
+Route::get('/input', function () {
+    return view('pages.forminpt');
+});
+
+Route::get('/login', function () {
+    return view('auth.login');
 });
