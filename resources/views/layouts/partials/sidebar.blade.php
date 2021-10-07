@@ -26,6 +26,8 @@
                  <div class="menu-title">Dashboard</div>
              </a>
              <ul>
+                 <li> <a href="/"><i class="bx bx-right-arrow-alt"></i>Dashboard</a>
+                 </li>
                  <li> <a href="/login"><i class="bx bx-right-arrow-alt"></i>Login</a>
                  </li>
                  <li> <a href="/blank"><i class="bx bx-right-arrow-alt"></i>Blank</a>

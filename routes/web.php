@@ -16,17 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/searchbar', [Searchbar::class,'loadData']);
 
 Route::get('/', function () {
-    return view('layouts.dashboard');
+    return view('layouts.dashboardmain',
+    ['title'=>'Dashboard']
+);
 });
 
 Route::get('/blank', function () {
-    return view('pages.blank');
+    return view('pages.blank',
+    ['title'=>'Blank Pages']
+);
 });
 
 Route::get('/input', function () {
-    return view('pages.forminpt');
+    return view('pages.forminpt',
+    ['title'=>'Form Input']
+);
 });
 
 Route::get('/login', function () {
-    return view('auth.login');
+    return view('layouts.auth.main');
 });
