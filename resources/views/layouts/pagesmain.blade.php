@@ -8,6 +8,7 @@
         <!--page-content-wrapper-->
         <div class="page-content-wrapper">
             <div class="page-content">
+                @include('layouts.partials.headerlink')
                 @yield('content')
             </div>
         </div>

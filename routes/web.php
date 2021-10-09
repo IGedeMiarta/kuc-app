@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Models\Searchbar;
 use Illuminate\Support\Facades\Route;
 
@@ -23,16 +24,21 @@ Route::get('/', function () {
 
 Route::get('/blank', function () {
     return view('pages.blank',
-    ['title'=>'Blank Pages']
+    ['title'=>'Blank Pages',
+     'headerlink'=>['Blank']   
+    ]
 );
 });
 
 Route::get('/input', function () {
     return view('pages.forminpt',
-    ['title'=>'Form Input']
+    [
+        'title'=>'Form Input',
+        // 'headerlink' => ['Dashboard','Gudang','Form Input']       
+    ]
 );
 });
 
-Route::get('/login', function () {
-    return view('layouts.auth.main');
-});
+Route::get('/login', [AuthController::class,'loginview']);
+Route::post('/login', [AuthController::class,'authlogin']);
+Route::get('/lockscreen', [AuthController::class,'lockscreen']);

@@ -1,4 +1,5 @@
  @extends('layouts.pagesmain')
+
  @section('content')
      <div class="card radius-15">
          <div class="card-body">
