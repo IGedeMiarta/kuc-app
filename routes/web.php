@@ -42,3 +42,6 @@ Route::get('/input', function () {
 Route::get('/login', [AuthController::class,'loginview']);
 Route::post('/login', [AuthController::class,'authlogin']);
 Route::get('/lockscreen', [AuthController::class,'lockscreen']);
+Route::get('/user-profile', function () {
+    return view('pages.userprofile',['title'=>'User Profile']);
+});

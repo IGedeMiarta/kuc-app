@@ -114,6 +114,14 @@
                  </li>
              </ul>
          </li>
+         <li class="menu-label">User</li>
+         <li>
+             <a href="/user-profile">
+                 <div class="parent-icon icon-color-4"><i class="bx bx-user-circle"></i>
+                 </div>
+                 <div class="menu-title">User Profile</div>
+             </a>
+         </li>
      </ul>
      <!--end navigation-->
  </div>
