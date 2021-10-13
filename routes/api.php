@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\GlobalModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+//  http://127.0.0.1:8000/api/country  {link api}
+Route::get('country', function () {
+    $rs = GlobalModel::countryList();
+    return response($rs,200);
+});
+Route::post('counry', function (Request $request) {
+    if(isset($_POST)){
+        return $_POST;
+    }else{
+        return 'fail';
+    }
 });

@@ -32,6 +32,8 @@
                  </li>
                  <li> <a href="/input"><i class="bx bx-right-arrow-alt"></i>Form</a>
                  </li>
+                 <li> <a href="/select-input"><i class="bx bx-right-arrow-alt"></i>Form Select</a>
+                 </li>
                  <li> <a href="/login" target="blank"><i class="bx bx-right-arrow-alt"></i>Login</a>
                  </li>
                  <li> <a href="/lockscreen" target="_blank"><i class="bx bx-right-arrow-alt"></i>Lock</a>

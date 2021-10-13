@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Models\GlobalModel;
 use App\Models\Searchbar;
+use Clockwork\Request\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/searchbar', [Searchbar::class,'loadData']);
+Route::post('/search', function () {
+    $route=$_POST;
+    return redirect($route['search']);
+});
 
 Route::get('/', function () {
     return view('layouts.dashboardmain',
@@ -39,6 +44,18 @@ Route::get('/input', function () {
 );
 });
 
+Route::get('/select-input', function () {
+    
+    return view('pages.formselect',
+    [
+        'title'=>'Form Select',
+        'countres' => GlobalModel::countryList()
+    ]
+    );
+});
+Route::post('/select-input', function (Request $request) {
+    return $_POST;
+});
 Route::get('/login', [AuthController::class,'loginview']);
 Route::post('/login', [AuthController::class,'authlogin']);
 Route::get('/lockscreen', [AuthController::class,'lockscreen']);

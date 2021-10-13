@@ -10,6 +10,8 @@
     <link rel="icon" href="/images/favicon-32x32.png" type="image/png" />
     <!-- Vector CSS -->
     <link href="/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
     <!--plugins-->
     <link href="/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
     <link href="/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />

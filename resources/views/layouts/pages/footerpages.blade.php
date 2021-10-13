@@ -22,3 +22,17 @@
 </script>
 <!-- App JS -->
 <script src="/js/app.js"></script>
+{{-- <script>
+    var input = document.getElementById("search");
+    var name = $("#search").val();
+    input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("myBtn").click();
+            console.log(name);
+        }
+    });
+</script> --}}
