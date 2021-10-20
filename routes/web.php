@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthController;
 use App\Models\GlobalModel;
-use App\Models\Searchbar;
 use Clockwork\Request\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -61,4 +60,12 @@ Route::post('/login', [AuthController::class,'authlogin']);
 Route::get('/lockscreen', [AuthController::class,'lockscreen']);
 Route::get('/user-profile', function () {
     return view('pages.userprofile',['title'=>'User Profile']);
+});
+
+Route::get('barang-masuk',function(){
+    return view('pages.brng_masuk',['title'=>'Barang Masuk','headerlink'=>['Barang','Barang Masuk']]);
+});
+
+Route::get('/absents',function(){
+    return view('layouts.auth.absent',['title'=>'Absensi']);
 });

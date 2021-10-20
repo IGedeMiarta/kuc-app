@@ -5,7 +5,7 @@
          <div class="sidebar-header">
              <a href="/">
                  <div class="">
-					<img src=" /images/logo-icon.png" class="logo-icon-2" alt="" />
+                     <img src=" /images/logo-icon.png" class="logo-icon-2" alt="" />
              </a>
          </div>
          <div>
@@ -43,9 +43,9 @@
          <li class="menu-label">Web Apps</li>
          <li>
              <a href="javascript:;" class="has-arrow">
-                 <div class="parent-icon icon-color-1"><i class="bx bx-buildings"></i>
+                 <div class="parent-icon icon-color-6"><i class="bx bx-package"></i>
                  </div>
-                 <div class="menu-title">Gudang</div>
+                 <div class="menu-title"> Barang</div>
              </a>
              <ul>
                  <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Barang Masuk</a>
@@ -58,9 +58,18 @@
                  </li>
                  <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Konversi Barang</a>
                  </li>
-                 <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Retur Supplier</a>
-                 </li>
+             </ul>
+         </li>
+         <li>
+             <a href="javascript:;" class="has-arrow">
+                 <div class="parent-icon icon-color-4"><i class="bx bx-git-compare"></i>
+                 </div>
+                 <div class="menu-title">Retur</div>
+             </a>
+             <ul>
                  <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Retur Customer</a>
+                 </li>
+                 <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Retur Supplier</a>
                  </li>
              </ul>
          </li>
@@ -89,6 +98,7 @@
                  </li>
              </ul>
          </li>
+
          <li>
              <a href="javascript:;" class="has-arrow">
                  <div class="parent-icon icon-color-3"><i class="bx bx-info-square"></i>
