@@ -7,8 +7,13 @@
                  <li class="breadcrumb-item"><a href="/"><i class='bx bx-home-alt'></i></a>
                  </li>
                  @if (isset($headerlink))
-                     @foreach ($headerlink as $a)
-                         <li class="breadcrumb-item active" aria-current="page">{{ $a }}</li>
+                     @foreach ($headerlink as $link => $view)
+                         @if ($link != '#')
+                             <li class="breadcrumb-item" aria-current="page"><a
+                                     href="{{ $link }}">{{ $view }}</a></li>
+                         @else
+                             <li class="breadcrumb-item active" aria-current="page">{{ $view }}</li>
+                         @endif
                      @endforeach
                  @else
                      <li class="breadcrumb-item active" aria-current="page">{{ $title }}</li>

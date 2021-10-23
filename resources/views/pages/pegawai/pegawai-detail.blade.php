@@ -14,8 +14,7 @@
                             </div>
                             <div class="ml-md-4 flex-grow-1">
                                 <div class="d-flex align-items-center mb-1">
-                                    <h4 class="mb-0">IGede Miarta Yasa, S.Kom</h4>
-                                    <p class="mb-0 ml-auto">Rp 4000k</p>
+                                    <h4 class="mb-0">{{ $pegawai->Nama }}</h4>
                                 </div>
                                 <p class="text-primary fs-5"><i class='bx bx-buildings'></i> Karya Utama</p>
                             </div>
@@ -25,25 +24,27 @@
                         <table class="table table-sm table-borderless mt-md-0 mt-3">
                             <tbody>
                                 <tr>
-                                    <th>Job Role</th>
+                                    <th>Jabatan</th>
                                     <td>:</td>
-                                    <td>IT Programmer <span class="badge badge-success">Active</span>
+                                    <td>{{ $pegawai->jabatan->NamaJabatan }} <span
+                                            class="badge badge-success">{{ $pegawai->StatusPegawai }}</span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Age</th>
+                                    <th>Umur</th>
                                     <td>:</td>
-                                    <td>23</td>
+                                    <td>{{ date('Y', strtotime(now())) - date('Y', strtotime($pegawai->Tgl_Lahir)) }}
+                                        Tahun</td>
                                 </tr>
                                 <tr>
-                                    <th>Address:</th>
+                                    <th>Alamat:</th>
                                     <td>:</td>
-                                    <td>Denpasar, Bali</td>
+                                    <td>{{ $pegawai->Alamat }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Years Join:</th>
+                                    <th>Tahun Bergabung:</th>
                                     <td>:</td>
-                                    <td>2021</td>
+                                    <td>{{ date('M Y', strtotime($pegawai->Tgl_Masuk)) }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -53,7 +54,7 @@
                 <!--end row-->
                 <ul class="nav nav-pills">
                     <li class="nav-item"> <a class="nav-link active" id="profile-tab" data-toggle="tab"
-                            href="#Biography"><span class="p-tab-name">Biography</span><i
+                            href="#Biography"><span class="p-tab-name">Detail</span><i
                                 class='bx bxs-user-rectangle font-24 d-sm-none'></i></a>
                     </li>
                     <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Edit-Profile"><span
@@ -67,23 +68,23 @@
                             <div class="col-lg-4">
                                 <div class="card shadow-none border mb-0 mb-3">
                                     <div class="card-body">
-                                        <h5 class="mb-3">Social Media</h5>
+                                        <h5 class="mb-3">Detail Pegawai</h5>
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
-                                            <p class="mb-0"><i class="lni lni-facebook-filled"></i><a
-                                                    href="javascript:;">svetlananyukova.com</a>
-                                            </p>
+                                            <h6 class="mb-0"><i class="bx bx-id-card "></i>
+                                                {{ $pegawai->NoKTP }}
+                                            </h6>
                                         </li>
                                         <li class="list-group-item">
-                                            <p class="mb-0"><i class="lni lni-instagram"></i> <a
-                                                    href="javascript:;">blog.svetlananyukova.com</a>
-                                            </p>
+                                            <h6 class="mb-0"><i class="lni lni-phone"></i>
+                                                {{ $pegawai->Telpon }}
+                                            </h6>
                                         </li>
                                         <li class="list-group-item">
-                                            <p class="mb-1"><i class='lni lni-linkedin-original'></i> <a
-                                                    href="javascript:;">svetlananyukova.com/portfolio</a>
-                                            </p>
+                                            <h6 class="mb-1"><i class='bx bx-user-voice'></i>
+                                                {{ $pegawai->Agama }}
+                                            </h6>
                                         </li>
                                     </ul>
                                 </div>

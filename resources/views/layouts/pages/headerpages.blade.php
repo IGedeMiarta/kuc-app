@@ -25,4 +25,8 @@
     <link rel="stylesheet" href="/css/app.css" />
     <link rel="stylesheet" href="/css/dark-sidebar.css" />
     <link rel="stylesheet" href="/css/dark-theme.css" />
+    <!--Data Tables -->
+    <link href="/plugins/datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    <link href="/plugins/datatable/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
+
 </head>

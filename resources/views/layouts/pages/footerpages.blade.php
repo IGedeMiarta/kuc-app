@@ -6,6 +6,19 @@
 <script src="/plugins/metismenu/js/metisMenu.min.js"></script>
 <script src="/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 <script src="/plugins/select2/js/select2.min.js"></script>
+<!--Data Tables js-->
+<script src="/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        //Default data table
+        $('#example').DataTable();
+        var table = $('#example2').DataTable({
+            lengthChange: false,
+            buttons: ['copy', 'excel', 'pdf', 'print', 'colvis']
+        });
+        table.buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+    });
+</script>
 <script>
     $('.single-select').select2({
         theme: 'bootstrap4',
@@ -22,17 +35,3 @@
 </script>
 <!-- App JS -->
 <script src="/js/app.js"></script>
-{{-- <script>
-    var input = document.getElementById("search");
-    var name = $("#search").val();
-    input.addEventListener("keyup", function(event) {
-        // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) {
-            // Cancel the default action, if needed
-            event.preventDefault();
-            // Trigger the button element with a click
-            document.getElementById("myBtn").click();
-            console.log(name);
-        }
-    });
-</script> --}}

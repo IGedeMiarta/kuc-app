@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Absen;
+use App\Models\Pegawai;
 use Illuminate\Http\Request;
 
-class AbsenController extends Controller
+class PegawaiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,11 @@ class AbsenController extends Controller
      */
     public function index()
     {
-        //
+        $data['title'] = 'All Pegawai';
+        $data['pegawai']= Pegawai::where('StatusPegawai','!=','Non Aktif')
+                            ->orderByDesc('Tgl_Masuk')->get();
+     
+        return view('pages.pegawai.pegawai',$data);
     }
 
     /**
@@ -41,21 +45,26 @@ class AbsenController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Absen  $absen
+     * @param  \App\Models\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function show(Absen $absen)
+    public function show($NIP)
     {
-        //
+        $data['title'] = 'Detail Pegawai';
+        $data['headerlink'] = ['/pegawai'=>'Pegawai','#'=>'Detail Pegawai'];
+        $data['pegawai']= Pegawai::where('NIP','=',$NIP)->first();
+        return view('pages.pegawai.pegawai-detail',$data);
+        // return $data;
+      
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Absen  $absen
+     * @param  \App\Models\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function edit(Absen $absen)
+    public function edit(Pegawai $pegawai)
     {
         //
     }
@@ -64,10 +73,10 @@ class AbsenController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Absen  $absen
+     * @param  \App\Models\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Absen $absen)
+    public function update(Request $request, Pegawai $pegawai)
     {
         //
     }
@@ -75,10 +84,10 @@ class AbsenController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Absen  $absen
+     * @param  \App\Models\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Absen $absen)
+    public function destroy(Pegawai $pegawai)
     {
         //
     }

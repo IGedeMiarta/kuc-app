@@ -20,24 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//  http://127.0.0.1:8000/api/country  {link api}
-Route::get('country', function () {
-    $rs = GlobalModel::countryList();
-    return response($rs,200);
-});
-Route::post('country', function (Request $request) {
-    if(isset($_POST)){
-        return $_POST;
-    }else{
-        return 'fail';
-    }
-});
 
-// Route::get('/job-role',[JobRoleController::class,'index']);
-// Route::post('/job-role', [JobRoleController::class,'store']);
-// Route::get('/job-role/{id}', [JobRoleController::class,'show']);
-// Route::put('/job-role/{id}', [JobRoleController::class,'update']);
-// Route::delete('/job-role/{id}', [JobRoleController::class,'destroy']);
-
-Route::resource('job-role', JobRoleController::class);
 
