@@ -116,14 +116,14 @@
                              <div class="media user-box align-items-center">
                                  <div class="media-body user-info">
                                      <p class="user-name mb-0">Jessica Doe</p>
-                                     <p class="designattion mb-0">Available</p>
+                                     <p class="designattion mb-0 text-success">Available</p>
                                  </div>
                                  <img src="https://via.placeholder.com/110x110" class="user-img"
                                      alt="user avatar">
                              </div>
                          </a>
                          <div class="dropdown-menu dropdown-menu-right"> <a class="dropdown-item"
-                                 href="javascript:;"><i class="bx bx-user"></i><span>Profile</span></a>
+                                 href="/user-profile"><i class="bx bx-user"></i><span>Profile</span></a>
 
                              <div class="dropdown-divider mb-0"></div> <a class="dropdown-item" href="/user-profile"><i
                                      class="bx bx-power-off"></i><span>Logout</span></a>
@@ -136,4 +136,3 @@
      </form>
  </header>
  <!--end header-->
-

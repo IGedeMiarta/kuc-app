@@ -1,7 +1,6 @@
 @extends('layouts.auth.temp')
 @section('content')
 
-
     <body class="bg-lock-screen">
         <!-- wrapper -->
         <div class="wrapper">
@@ -11,22 +10,20 @@
                         <h2 class="text-white" id="jam"></h2>
                         <h5 class="text-white" id="tanggal"></h5>
                         <div class="">
-						<img src=" /images/icons/user.png" class="mt-5" width="120" alt="" />
-                    </div>
-                    <p class="mt-2 text-white">{{ 'Username' }}</p>
-                    <form action="" method="post">
-                        @csrf
-                        <div class="form-group mt-3">
-                            <input type="password" class="form-control" placeholder="Password" autofocus required />
+                            <img src=" /images/icons/user.png" class="mt-5" width="120" alt="" />
                         </div>
-                        <button type="submit" class="btn btn-light btn-block">Login</button>
-                    </form>
+                        <p class="mt-2 text-white">{{ 'Username' }}</p>
+                        <form action="" method="post">
+                            @csrf
+                            <div class="form-group mt-3">
+                                <input type="password" class="form-control" placeholder="Password" autofocus required />
+                            </div>
+                            <button type="submit" class="btn btn-light btn-block">Login</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
-
-
 
         <!-- end wrapper -->
         <script type="text/javascript">
