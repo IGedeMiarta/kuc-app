@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>{{ $title }} | KUC-APP</title>
     <!--favicon-->
-    <link rel="icon" href="/images/favicon-32x32.png" type="image/png" />
+    <link rel="icon" href="/images/logo.png" type="image/png" />
     <!-- Vector CSS -->
     <link href="/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="/plugins/select2/css/select2.min.css" rel="stylesheet" />

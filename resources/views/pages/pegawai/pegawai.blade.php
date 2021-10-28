@@ -6,7 +6,7 @@
         <div class="card-header border-bottom-0">
             <div class="d-lg-flex align-items-center">
                 <div>
-                    <h5 class="mb-2 mb-lg-0">header</h5>
+                    <h5 class="mb-2 mb-lg-0">{{ $title }}</h5>
                 </div>
 
             </div>
@@ -21,8 +21,7 @@
                                 <th>Nama</th>
                                 <th>Jabatan</th>
                                 <th>JenKel</th>
-                                <th>Hp</th>
-                                <th>Status</th>
+                                <th>Agama</th>
                                 <th>Detail</th>
                             </tr>
                         </thead>
@@ -33,19 +32,13 @@
                                     <td>{{ $item->Nama }}</td>
                                     <td>{{ $item->jabatan->NamaJabatan }}</td>
                                     <td>{{ $item->Jenis_Kelamin }}</td>
-                                    <td>{{ $item->Telpon }}</td>
-                                    <td><a href="javascript:;"
-                                            class="btn btn-sm  @if ($item->StatusPegawai == 'Kontrak')
-                                            btn-light-info
-                                        @else 
-                                            btn-light-success
-                                        @endif btn-block radius-30">{{ $item->StatusPegawai }}</a>
-                                    </td>
+                                    <td>{{ $item->Agama }}</td>
                                     <td>
                                         <a href="/pegawai-detail/{{ $item->NIP }}"
-                                            class="btn btn-sm btn-light-primary radius-10">Detail</a>
+                                            class="btn btn-sm btn-light-primary radius-10">
+                                            <i class="lni lni-eye"></i>
+                                            Detail</a>
                                     </td>
-
                                 </tr>
                             @endforeach
                         </tbody>

@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\DatatablesController;
+use App\Http\Controllers\PegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +28,8 @@ Route::get('/', function () {
 
 Route::get('/pegawai',[PegawaiController::class,'index']);
 Route::get('/pegawai-detail/{pegawai}',[PegawaiController::class,'show']);
+Route::post('/pegawai-detail/{NIP}',[PegawaiController::class,'update']);
 
+Route::resource('/absensi', AbsensiController::class);
+
+Route::get('/tb-absen',[DatatablesController::class,'tabelAbsen'])->name('absensi.index'); //serverside datatables

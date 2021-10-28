@@ -2,6 +2,12 @@
 
 
 @section('content')
+    @if (session()->has('success'))
+        @dd(session('seccess'))
+        {{-- <div class="alert alert-success col-md-8" role="alert">
+            {{ session('success') }}
+        </div> --}}
+    @endif
     <div class="user-profile-page">
         <div class="card radius-15">
             <div class="card-body">
@@ -16,7 +22,7 @@
                                 <div class="d-flex align-items-center mb-1">
                                     <h4 class="mb-0">{{ $pegawai->Nama }}</h4>
                                 </div>
-                                <p class="text-primary fs-5"><i class='bx bx-buildings'></i> Karya Utama</p>
+                                <p class="text-primary fs-5"><i class='bx bx-buildings'></i>Karya Utama</p>
                             </div>
                         </div>
                     </div>
@@ -44,7 +50,7 @@
                                 <tr>
                                     <th>Tahun Bergabung:</th>
                                     <td>:</td>
-                                    <td>{{ date('M Y', strtotime($pegawai->Tgl_Masuk)) }}</td>
+                                    <td>{{ date('m / Y', strtotime($pegawai->Tgl_Masuk)) }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -93,15 +99,16 @@
                                 <div class="card shadow-none border mb-0 radius-15">
                                     <div class="card-body">
                                         <h5 class="mb-3">About</h5>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                            have suffered alteration in some form, by injected humour, or randomised words
-                                            which don't look even slightly believable. If you are going to use a passage of
-                                            Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
-                                            middle of text. All the Lorem Ipsum generators on the Internet tend to repeat
-                                            predefined chunks as necessary, making this the first true generator on the
-                                            Internet. It uses a dictionary of over 200 Latin words, combined with a handful
-                                            of model sentence structures, to generate Lorem Ipsum which looks reasonable.
-                                        </p>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem velit natus harum
+                                            quisquam alias porro facere eveniet laboriosam! Ex optio vero amet? Quia fugit
+                                            veritatis praesentium dolores nulla excepturi ipsa laudantium aliquid illum,
+                                            dignissimos sunt veniam quae suscipit doloribus commodi, pariatur in recusandae
+                                            sit dolor adipisci! Harum blanditiis facere molestias nesciunt omnis atque
+                                            quasi, nisi vitae voluptas et enim aliquid laboriosam, odio expedita possimus?
+                                            Ad delectus repudiandae natus quibusdam obcaecati sapiente debitis dolorum enim
+                                            fugit praesentium aspernatur nobis, maxime labore at, officia eum molestias,
+                                            tempore error recusandae. Maiores expedita magni veritatis. Impedit consectetur
+                                            iste enim reprehenderit cum nobis id accusamus?</p>
                                     </div>
                                 </div>
                             </div>
@@ -111,149 +118,114 @@
                         <div class="card shadow-none border mb-0 radius-15">
                             <div class="card-body">
                                 <div class="form-body">
-                                    <div class="row">
-                                        <div class="col-12 col-lg-5 border-right">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label>Name</label>
-                                                    <input type="text" name="nama" class="form-control">
+                                    <form action="" method="post">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-12 col-lg-5 border-right">
+                                                <div class="form-group">
+                                                    <label>No KTP</label>
+                                                    <input type="number" name="NoKTP"
+                                                        class="form-control @error('NoKTP')
+                                                        is-ivalid
+                                                    @enderror"
+                                                        value="{{ $pegawai->NoKTP }}">
+                                                    @error('NoKTP')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
-                                                <div class="form-group col-md-6">
-                                                    <label>Username</label>
-                                                    <input type="text" name="username" class="form-control">
+                                                <div class="form-group">
+                                                    <label>Nama</label>
+                                                    <input type="text" name="Nama"
+                                                        class="form-control @error('Nama')
+                                                        is-ivalid
+                                                    @enderror"
+                                                        value="{{ $pegawai->Nama }}">
+                                                    @error('Nama')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Password</label>
-                                                <input type="password" name="password" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Email</label>
-                                                <input type="text" name="email" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Phone</label>
-                                                <input type="text" name="handphone" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Address</label>
-                                                <input type="text" name="alamat" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Agama</label>
-                                                <select class="form-control" name="agama">
-                                                    <option value="Budha">Budha</option>
-                                                    <option value="Hindu">Hindu</option>
-                                                    <option value="Islam">Islam</option>
-                                                    <option value="Katolik">Katolik</option>
-                                                    <option value="Kristen">Kristen</option>
-                                                    <option value="Konghucu">Konghucu</option>
-                                                    <option value="Lainnya">Lainnya</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-lg-7">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label>Gender</label>
-                                                    <select class="form-control">
-                                                        <option value="L">Laki-laki</option>
-                                                        <option value="P">Perempuan</option>
-                                                    </select>
+                                                <div class="form-group">
+                                                    <label>Telpon</label>
+                                                    <input type="text" name="Telpon" class="form-control"
+                                                        value="{{ $pegawai->Telpon }}">
                                                 </div>
-                                                <div class="form-group col-md-6">
-                                                    <label>Language</label>
-                                                    <select class="form-control">
-                                                        <option value="ina">Indonesia</option>
-                                                        <option value="eng">English</option>
-                                                    </select>
+                                                <div class="form-group">
+                                                    <label>Alamat</label>
+                                                    <textarea name="Alamat" class="form-control" id="Alamat" cols="30"
+                                                        rows="5">{{ $pegawai->Alamat }}</textarea>
                                                 </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <p class="mb-0">Date of Birth</p>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <select class="form-control" name="mm">
-                                                        <option value="01">January</option>
-                                                        <option value="02">February</option>
-                                                        <option value="03" selected>March</option>
-                                                        <option value="04">April</option>
-                                                        <option value="05">May</option>
-                                                        <option value="06">June</option>
-                                                        <option value="07">July</option>
-                                                        <option value="08">August</option>
-                                                        <option value="09">September</option>
-                                                        <option value="10">October</option>
-                                                        <option value="11">November</option>
-                                                        <option value="12">December</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <select class="form-control">
-                                                        <option>01</option>
-                                                        <option>02</option>
-                                                        <option>03</option>
-                                                        <option>04</option>
-                                                        <option>05</option>
-                                                        <option>06</option>
-                                                        <option>07</option>
-                                                        <option>08</option>
-                                                        <option>09</option>
-                                                        <option selected>10</option>
-                                                        <option>11</option>
-                                                        <option>12</option>
-                                                        <option>13</option>
-                                                        <option>14</option>
-                                                        <option>15</option>
-                                                        <option>16</option>
-                                                        <option>17</option>
-                                                        <option>18</option>
-                                                        <option>19</option>
-                                                        <option>20</option>
-                                                        <option>21</option>
-                                                        <option>22</option>
-                                                        <option>23</option>
-                                                        <option>24</option>
-                                                        <option>25</option>
-                                                        <option>26</option>
-                                                        <option>27</option>
-                                                        <option>28</option>
-                                                        <option>29</option>
-                                                        <option>30</option>
-                                                        <option>31</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <select class="form-control">
-                                                        <option>1990</option>
-                                                        <option>1991</option>
-                                                        <option>1992</option>
-                                                        <option selected>1993</option>
-                                                        <option>1994</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label>Facebook</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label>Instagram</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <label>Linked In</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <button class="btn btn-success" type="submit">Simpan</button>
 
+                                            </div>
+                                            <div class="col-12 col-lg-7">
+                                                <div class="form-group">
+                                                    <label>Agama</label>
+                                                    <select class="single-select" name="Agama">
+                                                        @if (isset($pegawai->Agama))
+                                                            <option value="{{ $pegawai->Agama }}" selected>
+                                                                {{ $pegawai->Agama }}
+                                                            </option>
+                                                        @endif
+                                                        <option value="Budha">Budha</option>
+                                                        <option value="Hindu">Hindu</option>
+                                                        <option value="Islam">Islam</option>
+                                                        <option value="Kristen Katolik">Kristen Katolik</option>
+                                                        <option value="Kristen Protestan">Kristen Protestan</option>
+                                                        <option value="Konghucu">Konghucu</option>
+                                                        <option value="Lainnya">Lainnya</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label>Gender</label>
+                                                        <select class="form-control" name="Jenis_Kelamin">
+                                                            @if ($pegawai->Jenis_Kelamin == 'Laki-laki')
+                                                                <option value="Laki-laki" selected>Laki-laki</option>
+                                                            @else
+                                                                <option value="Perempuan" selected>Perempuan</option>
+                                                            @endif
+                                                            <option value="Laki-laki">Laki-laki</option>
+                                                            <option value="Perempuan">Perempuan</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label>Jabatan</label>
+                                                        <select class="single-select" name="KodeJabatan">
+                                                            @if (isset($jabatan))
+                                                                <option value="{{ $pegawai->jabatan->KodeJabatan }}"
+                                                                    selected>
+                                                                    {{ $pegawai->jabatan->NamaJabatan }}</option>
+                                                            @endif
+                                                            @foreach ($jabatan as $jabatan)
+
+                                                                <option value="{{ $jabatan->KodeJabatan }}">
+                                                                    {{ $jabatan->NamaJabatan }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label>Tempat Lahir</label>
+                                                        <input type="text" class="form-control" name="Tempat_Lahir" id=""
+                                                            value="{{ $pegawai->Tempat_Lahir }}">
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label>Tanggal Lahir</label>
+                                                        <input type="date" class="form-control" name="Tgl_Lahir" id=""
+                                                            value="{{ date('Y-m-d', strtotime($pegawai->Tgl_Lahir)) }}">
+                                                    </div>
+                                                </div>
+
+
+                                                <button class="btn btn-success" type="submit">Simpan</button>
+
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

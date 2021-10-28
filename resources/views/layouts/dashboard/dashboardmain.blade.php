@@ -21,7 +21,7 @@
     <!--End Back To Top Button-->
     <!--footer -->
     <div class="footer">
-        <p class="mb-0">KUC-APP &copy2021
+        <p class="mb-0">Karya Utama &copy2021
         </p>
     </div>
     <!-- end footer -->

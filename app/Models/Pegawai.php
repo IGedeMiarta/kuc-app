@@ -13,9 +13,17 @@ class Pegawai extends Model
     protected $primaryKey = 'NIP'; //mendefinisikan primary key
     protected $keyType = 'string'; //mendefinisikan bahwa primary key bukan int autoincrement
 
+    protected $guarded = [''];
+
     public $timestamps = false; //mendefinisikan bahwa tabel tidak menggunakan timestamp laravel   
 
     public function jabatan(){
         return $this->belongsTo(Jabatan::class,'KodeJabatan');
+    }
+    public function fingerprint(){
+        return $this->belongsTo(Fingerprint::class);
+    }
+    public function absensi(){
+        return $this->hasMany(Absensi::class,'kodepegawai');
     }
 }

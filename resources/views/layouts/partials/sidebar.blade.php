@@ -5,7 +5,7 @@
          <div class="sidebar-header">
              <a href="/">
                  <div class="">
-                     <img src=" /images/logo-icon.png" class="logo-icon-2" alt="" />
+                     <img src=" /images/logo.png" class="logo-icon-2" alt="" />
              </a>
          </div>
          <div>
@@ -20,6 +20,13 @@
      <!--navigation-->
      <ul class="metismenu" id="menu">
          <li>
+             <a href="/">
+                 <div class="parent-icon icon-color-1"><i class="bx bx-home-alt"></i>
+                 </div>
+                 <div class="menu-title">Dashboard</div>
+             </a>
+         </li>
+         {{-- <li>
              <a href="javascript:;" class="has-arrow">
                  <div class="parent-icon icon-color-1"><i class="bx bx-home-alt"></i>
                  </div>
@@ -39,7 +46,7 @@
                  <li> <a href="/lockscreen" target="_blank"><i class="bx bx-right-arrow-alt"></i>Lock</a>
                  </li>
              </ul>
-         </li>
+         </li> --}}
          <li class="menu-label">Web Apps</li>
          <li>
              <a href="javascript:;" class="has-arrow">
@@ -106,7 +113,7 @@
                  <div class="menu-title">Logs</div>
              </a>
              <ul>
-                 <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Absensi</a>
+                 <li> <a href="/absensi"><i class="bx bx-right-arrow-alt"></i>Absensi</a>
                  </li>
                  <li> <a href="#"><i class="bx bx-right-arrow-alt"></i>Daftar Gaji</a>
                  </li>
@@ -126,12 +133,12 @@
                  </li>
              </ul>
          </li>
-         <li class="menu-label">User</li>
+         <li class="menu-label">Pegawai</li>
          <li>
-             <a href="/user-profile">
+             <a href="/pegawai">
                  <div class="parent-icon icon-color-4"><i class="bx bx-user-circle"></i>
                  </div>
-                 <div class="menu-title">User Profile</div>
+                 <div class="menu-title">Data Pegawai</div>
              </a>
          </li>
      </ul>

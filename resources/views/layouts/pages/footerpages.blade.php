@@ -8,6 +8,7 @@
 <script src="/plugins/select2/js/select2.min.js"></script>
 <!--Data Tables js-->
 <script src="/plugins/datatable/js/jquery.dataTables.min.js"></script>
+
 <script>
     $(document).ready(function() {
         //Default data table
@@ -35,3 +36,6 @@
 </script>
 <!-- App JS -->
 <script src="/js/app.js"></script>
+<!-- Compiled and minified JavaScript -->
+
+<script src="/js/myscript.js"></script>

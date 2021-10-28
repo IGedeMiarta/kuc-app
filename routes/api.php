@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\FingerprintController;
 use App\Http\Controllers\JobRoleController;
 use App\Models\GlobalModel;
+use App\Models\Pegawai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/fingerprint', [FingerprintController::class,'index']);
 
+Route::get('/absensi/{kodepegawai}', [AbsensiController::class,'show']);
 
