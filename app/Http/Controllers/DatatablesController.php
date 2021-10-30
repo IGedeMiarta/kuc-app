@@ -10,10 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class DatatablesController extends Controller
 {
-    public function tabelAbsen(Request $request){
-
+    public function tabelAbsen(){
         $data = Absensi::getAbsenNow();
         return DataTables::of($data) ->addIndexColumn()
-                    ->make(true);
+                    ->make(true);         
     }
 }
+
+

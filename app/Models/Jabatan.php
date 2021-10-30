@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jabatan extends Model
 {
     use HasFactory;
+    protected $connection = 'Karya_DB'; //inisialisasi koneksi
 
     protected $table = 'HRD_jabatan'; //mendefinisikan bahwa nama tabel bukan jamak dari nama model
     protected $primaryKey = 'KodeJabatan'; //mendefinisikan primary key

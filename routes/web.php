@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\DatatablesController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
 
 /*
@@ -15,21 +16,24 @@ use App\Http\Controllers\PegawaiController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/search', function () {
-    $route=$_POST;
-    return redirect($route['search']);
-});
-
 Route::get('/', function () {
-    return view('layouts.dashboardmain',
-    ['title'=>'Dashboard']
-);
-});
+    return redirect("/login");  
+})->middleware('auth');
 
-Route::get('/pegawai',[PegawaiController::class,'index']);
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard.index',
+    ['title'=>'Dashboard']);
+})->middleware('auth');
+
+Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class,'authenticate']);
+Route::post('/search', [LoginController::class,'logout']);
+
+Route::get('/pegawai',[PegawaiController::class,'index'])->middleware('auth');
 Route::get('/pegawai-detail/{pegawai}',[PegawaiController::class,'show']);
 Route::post('/pegawai-detail/{NIP}',[PegawaiController::class,'update']);
 
+// Route::resource('/pegawai', PegawaiController::class)->middleware('auth');
 Route::resource('/absensi', AbsensiController::class);
 
 Route::get('/tb-absen',[DatatablesController::class,'tabelAbsen'])->name('absensi.index'); //serverside datatables

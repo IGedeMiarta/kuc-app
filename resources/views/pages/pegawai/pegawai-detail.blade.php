@@ -1,4 +1,4 @@
-@extends('layouts.pagesmain')
+@extends('layouts.pages.index')
 
 
 @section('content')

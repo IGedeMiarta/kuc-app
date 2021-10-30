@@ -9,7 +9,7 @@
         <div class="page-content-wrapper">
             <div class="page-content">
                 @include('layouts.partials.headerlink')
-                
+
                 @yield('content')
             </div>
         </div>
@@ -23,7 +23,7 @@
     <!--End Back To Top Button-->
     <!--footer -->
     <div class="footer">
-        <p class="mb-0">Karya Utama Apss &copy2021
+        <p class="mb-0">Karya Utama Apps &copy2021
         </p>
     </div>
     <!-- end footer -->

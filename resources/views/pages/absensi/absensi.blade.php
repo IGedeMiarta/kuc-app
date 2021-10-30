@@ -1,4 +1,4 @@
-@extends('layouts.pagesmain')
+@extends('layouts.pages.index')
 
 @section('content')
     <div class="card radius-15">
@@ -12,7 +12,7 @@
         </div>
         <div class="card-body ">
             <div class="card-header radius-10 border">
-                <div class="row mb-5">
+                {{-- <div class="row mb-5">
                     <div class="form-group select2-sm col-sm-4">
                         <label>Jabatan</label>
                         <select name="jabatan" id="" class="custom-select form-selects custom-select-sm ">
@@ -30,8 +30,8 @@
                         <label>Tanggal Sampai</label>
                         <input type="date" name="tgl_sampai" id="tgl_sampai" class="form-control form-control-sm">
                     </div>
-                </div>
-                <hr>
+                </div> --}}
+                {{-- <hr> --}}
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered" id="tabelAbsen" style="width:100%">
                         <thead>
@@ -41,14 +41,6 @@
                                 <th>Jabatan</th>
                                 <th>Status</th>
                                 <th>Waktu</th>
-                                {{-- <th>Jabatan</th> --}}
-                                {{-- <th>Masuk</th>
-                                <th>Pulang</th>
-                                <th>Durasi</th>
-                                <th>Keluar</th>
-                                <th>Kembali</th>
-                                <th>Durasi</th> --}}
-                                {{-- <th>Ket</th> --}}
                             </tr>
                         </thead>
 

@@ -9,14 +9,23 @@
                 <div class="row">
                     <div class="col-12 col-lg-10 mx-auto">
                         <div class="card radius-15">
+
                             <div class="row no-gutters">
                                 <div class="col-lg-6">
-                                    <form action="" method="post">
+                                    @if (session()->has('loginError'))
+                                        <div class="alert alert-warning alert-dismissible fade show mb-n3" role="alert">
+                                            {{ session('loginError') }}
+                                            <button type="button" class="close" data-dismiss="alert"
+                                                aria-label="Close"> <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    @endif
+                                    <form action="/login" method="post">
                                         <div class="card-body p-md-5">
                                             @csrf
                                             <div class="text-center">
-                                                <img src="/images/logo-icon.png" width="80" alt="">
-                                                <h3 class="mt-4 font-weight-bold">Welcome Back</h3>
+                                                <img src="/images/logo.png" width="80" alt="">
+                                                <h3 class="mt-4 font-weight-bold">Karya Utama</h3>
                                             </div>
                                             <div class="form-group mt-4">
                                                 <label>Username</label>
@@ -24,7 +33,7 @@
                                                     class="form-control @error('username')
                                                 is-invalid
                                             @enderror"
-                                                    name="username" id="username" placeholder="Enter your username"
+                                                    name="username" id="username" placeholder="Enter your username" value=""
                                                     autofocus />
                                                 @error('username')
                                                     <div class="invalid-feedback">
@@ -53,6 +62,7 @@
                                                 </button>
                                             </div>
                                             <hr>
+
                                         </div>
                                     </form>
                                 </div>

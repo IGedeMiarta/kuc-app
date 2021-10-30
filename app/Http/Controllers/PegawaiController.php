@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Jabatan;
 use App\Models\Pegawai;
+use GrahamCampbell\ResultType\Result;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -52,11 +53,11 @@ class PegawaiController extends Controller
      * @param  \App\Models\Pegawai  $pegawai
      * @return \Illuminate\Http\Response
      */
-    public function show($NIP)
+    public function show(Request $request)
     {
         $data['title'] = 'Detail Pegawai';
         $data['headerlink'] = ['/pegawai'=>'Pegawai','#'=>'Detail Pegawai'];
-        $data['pegawai'] = Pegawai::where('NIP','=',$NIP)->first();
+        $data['pegawai'] = Pegawai::where('NIP','=',$request->pegawai)->first();
         $data['jabatan'] = Jabatan::get();
         
         return view('pages.pegawai.pegawai-detail',$data);

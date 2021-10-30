@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Fingerprint extends Model
 {
     use HasFactory;
+    protected $connection = 'Karya_DB'; //inisialisasi koneksi
 
     protected $table = 'HRD_fingerprint'; //mendefinisikan bahwa nama tabel bukan jamak dari nama model
     protected $primaryKey = 'kodepegawai'; //mendefinisikan primary key

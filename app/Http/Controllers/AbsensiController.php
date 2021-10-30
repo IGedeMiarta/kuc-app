@@ -17,7 +17,9 @@ class AbsensiController extends Controller
     {
         $data['title'] = 'Absensi';
         $data['jabatan']= Jabatan::all();
+
         return view('pages.absensi.absensi',$data);
+        
     }
 
     /**

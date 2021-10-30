@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>{{ $title }}</title>
     <!--favicon-->
-    <link rel="icon" href="/images/favicon-32x32.png" type="image/png" />
+    <link rel="icon" href="/images/logo.png" type="image/png" />
     <!-- loader-->
     <link href="/css/pace.min.css" rel="stylesheet" />
     <script src="/js/pace.min.js"></script>

@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
-
     const table = $('#tabelAbsen').DataTable({
+        "order": [
+            [0, "desc"],
+            [4, 'desc']
+        ],
         "processing": true,
         "serverSide": true,
         "ajax": {
@@ -26,18 +29,14 @@ $(document).ready(function() {
             {
                 searchable: true,
                 "targets": 1
-
             },
             {
-                searchable: true,
+                searchable: false,
                 "targets": 2
-
             },
             {
                 searchable: false,
                 "targets": 3,
-
-
             },
             {
                 searchable: false,
@@ -59,21 +58,36 @@ $(document).ready(function() {
         d = date.getDate();
         m = date.getMonth();
         y = date.getFullYear();
-
+        if (d < 10) {
+            d = '0' + d;
+        }
+        if (m < 10) {
+            m = '0' + m;
+        }
         var tgl = d + '/' + m + '/' + y;
 
         return tgl;
     }
 
-    function getWaktu(waktu) {
-        var date = new Date(waktu),
-            d, m, y;
-        d = date.getHours();
-        m = date.getMinutes();
-        y = date.getSeconds();
 
+
+    function getWaktu(waktu) {
+        var jam = new Date(waktu),
+            d, m, y;
+        d = jam.getHours();
+        m = jam.getMinutes();
+        y = jam.getSeconds();
+
+        if (d < 10) {
+            d = '0' + d;
+        }
+        if (m < 10) {
+            m = '0' + m;
+        }
         var jam = d + ':' + m;
 
         return jam;
     }
+
+
 });

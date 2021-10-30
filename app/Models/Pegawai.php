@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pegawai extends Model
 {
     use HasFactory;
+    protected $connection = 'Karya_DB'; //inisialisasi koneksi
 
     protected $table = 'HRD_pegawai'; //mendefinisikan bahwa nama tabel bukan jamak dari nama model
     protected $primaryKey = 'NIP'; //mendefinisikan primary key
@@ -16,6 +17,10 @@ class Pegawai extends Model
     protected $guarded = [''];
 
     public $timestamps = false; //mendefinisikan bahwa tabel tidak menggunakan timestamp laravel   
+
+    public function user(){
+        $this->connection('Karya_DB')->belongsTo(User::class,'NIP');
+    }
 
     public function jabatan(){
         return $this->belongsTo(Jabatan::class,'KodeJabatan');
