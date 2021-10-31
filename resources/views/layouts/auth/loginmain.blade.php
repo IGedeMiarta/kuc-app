@@ -20,11 +20,11 @@
                                             </button>
                                         </div>
                                     @endif
-                                    <form action="/login" method="post">
+                                    <form action="{{ url('/login') }}" method="post">
                                         <div class="card-body p-md-5">
                                             @csrf
                                             <div class="text-center">
-                                                <img src="/images/logo.png" width="80" alt="">
+                                                <img src="{{ asset('/images/logo.png') }}" width="80" alt="">
                                                 <h3 class="mt-4 font-weight-bold">Karya Utama</h3>
                                             </div>
                                             <div class="form-group mt-4">
@@ -67,8 +67,8 @@
                                     </form>
                                 </div>
                                 <div class="col-lg-6">
-                                    <img src="/images/login-images/login-frent-img.jpg" class="card-img login-img h-100"
-                                        alt="...">
+                                    <img src="{{ asset('/images/login-images/login-frent-img.jpg') }}"
+                                        class="card-img login-img h-100" alt="...">
                                 </div>
                             </div>
                             <!--end row-->

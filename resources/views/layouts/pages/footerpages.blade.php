@@ -1,13 +1,13 @@
-<script src="/js/jquery.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="{{ asset('/js/jquery.min.js') }}"></script>
+<script src="{{ asset('/js/popper.min.js') }}"></script>
+<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 <!--plugins-->
-<script src="/plugins/simplebar/js/simplebar.min.js"></script>
-<script src="/plugins/metismenu/js/metisMenu.min.js"></script>
-<script src="/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-<script src="/plugins/select2/js/select2.min.js"></script>
+<script src="{{ asset('/plugins/simplebar/js/simplebar.min.js') }}"></script>
+<script src="{{ asset('/plugins/metismenu/js/metisMenu.min.js') }}"></script>
+<script src="{{ asset('/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
+<script src="{{ asset('/plugins/select2/js/select2.min.js') }}"></script>
 <!--Data Tables js-->
-<script src="/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="{{ asset('/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
 
 <script>
     $(document).ready(function() {
@@ -35,7 +35,7 @@
     });
 </script>
 <!-- App JS -->
-<script src="/js/app.js"></script>
+<script src="{{ url('/js/app.js') }}"></script>
 <!-- Compiled and minified JavaScript -->
 
-<script src="/js/myscript.js"></script>
+<script src="{{ url('/js/myscript.js') }}"></script>

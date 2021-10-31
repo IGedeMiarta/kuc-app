@@ -5,7 +5,7 @@
          <div class="sidebar-header">
              <a href="/">
                  <div class="">
-                     <img src=" /images/logo.png" class="logo-icon-2" alt="" />
+                     <img src=" {{ asset('/images/logo.png') }}" class="logo-icon-2" alt="" />
              </a>
          </div>
          <div>

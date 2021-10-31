@@ -30,5 +30,5 @@ Route::get('/fingerprint', [FingerprintController::class,'index']);
 Route::get('/absensi/{kodepegawai}', [AbsensiController::class,'show']);
 
 Route::get('/test',function(){
-        return Kodearea::all();
+        return User::all();
 });

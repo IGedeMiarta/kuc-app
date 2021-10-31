@@ -5,6 +5,7 @@ use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\DatatablesController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\StarterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,12 @@ Route::get('/', function () {
     return redirect("/login");  
 })->middleware('auth');
 
+Route::get('/blank',[StarterController::class,'blank']);
+
 Route::get('/dashboard', function () {
     return view('layouts.dashboard.index',
     ['title'=>'Dashboard']);
-})->middleware('auth');
+})->middleware('guest');
 
 Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'authenticate']);

@@ -22,13 +22,13 @@ class LoginController extends Controller
        
 
         if (Auth::attempt($credentials)) {
-            $user = User::where('username',$request->username)->first();
-            $pegawai = Pegawai::where('NIP',$user->NIP)->get(['Nama','KodeJabatan'])->first();
+            // $user = User::where('username',$request->username)->first();
+            // $pegawai = Pegawai::where('NIP',$user->NIP)->get(['Nama','KodeJabatan'])->first();
             
            
             $request->session()->regenerate();
 
-            $request->session()->put('nama', $pegawai->Nama);
+            // $request->session()->put('nama', $pegawai->Nama);
             return redirect()->intended('/dashboard');
         }
 

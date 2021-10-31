@@ -8,7 +8,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide": true,
         "ajax": {
-            "url": "/tb-absen",
+            "url": "{{ url('/tb-absen') }}",
             "type": "GET"
         },
 
